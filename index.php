@@ -24,20 +24,25 @@
     </div>
 
     <div class="container-md p3">
-    <h3>Seleccione una opciona para ingresar datos:</h3>
-
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            Elija una opción
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="pages/ingresoEstudiante.php">Estudiante</a></li>
-            <li><a class="dropdown-item" href="pages/ingresoDocente.php">Docente</a></li>
-            <li><a class="dropdown-item" href="pages/ingresoPersonal.php">Personal Administrativo</a></li>
-        </ul>
+    <h3><center>Seleccione una opciona para ingresar datos:<center></h3>
+    <center>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Elija una opción
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="pages/ingresoEstudiante.php">Estudiante</a></li>
+                <li><a class="dropdown-item" href="pages/ingresoDocente.php">Docente</a></li>
+                <li><a class="dropdown-item" href="pages/ingresoPersonal.php">Personal Administrativo</a></li>
+                
+            </ul>
+        </div>
+        <form method="post" action="eliminar_sesiones.php">
+            <button type="submit" class="btn btn-primary">Eliminar Registros</button>
+        </form>
     </div>
-    </div>
-
+    <center>
 
 
 
