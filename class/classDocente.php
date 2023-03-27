@@ -42,7 +42,7 @@ class Docente extends Persona {
     }
 
     function calcularSalario(){
-        return $this->salario = $this->horasTrabajadas * $this->pagoHoraTrabajada;
+        return $this->salario = round($this->horasTrabajadas * $this->pagoHoraTrabajada,2);
     }
 
 

@@ -70,40 +70,42 @@
         <div class="row">
             <div class="col-6 mb-3">
                 <label for="inputNombre" class="form-label">Nombre:</label>
-                <input type="text" class="form-control" id="inputName" name="nombre">
+                <input type="text" class="form-control" id="inputName" name="nombre" required>
             </div>
             <div class="col-6 mb-3">
                 <label for="inputApellido" class="form-label">Apellido:</label>
-                <input type="text" class="form-control" id="inputLastName" name="apellido">
+                <input type="text" class="form-control" id="inputLastName" name="apellido" required>
             </div>
         </div>
 
         <div class="row">
             <div class="col-3 mb-3">
                 <label for="inputDui" class="form-label">DUI:</label>
-                <input type="number" class="form-control" id="inputDUI" name="dui">
+                <input type="text" class="form-control" id="inputDUI" name="dui" required maxlength="9" pattern="[0-9]{9}">
+                <div id="emailHelp" class="form-text">Ingrese sin el guión</div>
             </div>
             <div class="col-3 mb-3">
                 <label for="inputNit" class="form-label">Nit:</label>
-                <input type="number" class="form-control" id="inputNit" name="nit">
+                <input type="text" class="form-control" id="inputNit" name="nit" required maxlength="14" pattern="[0-9]{14}">
+                <div id="emailHelp" class="form-text">Ingrese sin los guiones</div>
             </div>
             <div class="col-3 mb-3">
                 <label for="inputTelMovil" class="form-label">Telefono Movil:</label>
-                <input type="number" class="form-control" id="inputTelMovil" name="telMovil">
+                <input type="text" class="form-control" id="inputTelMovil" name="telMovil" required maxlength="8" pattern="[0-9]{8}">
             </div>
             <div class="col-3 mb-3">
             <label for="inputTelFijo" class="form-label">Telefono Fijo:</label>
-            <input type="number" class="form-control" id="inputTelFijo" name="telFijo">
+            <input type="text" class="form-control" id="inputTelFijo" name="telFijo" required maxlength="8" pattern="[0-9]{8}">
         </div>
         </div>
 
         <div class="mb-3">
             <label for="inputDirec" class="form-label">Dirección:</label>
-            <input type="text" class="form-control" id="inputDirec" name="direccion">
+            <input type="text" class="form-control" id="inputDirec" name="direccion" required>
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Correo electrónico:</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="correo">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="correo" required>
             <div id="emailHelp" class="form-text">Debe ingresar un correo electrónico valido</div>
         </div>
         
@@ -117,25 +119,27 @@
             </div>
             <div class="col-4 mb-3">
                 <label for="inputNaci" class="form-label">Fecha de Nacimiento:</label>
-                <input type="text" class="form-control" id="inputNaci" name="fechaNacimiento">
+                <input type="text" class="form-control" id="inputNaci" name="fechaNacimiento" required>
+                <div id="emailHelp" class="form-text">Formato: Año-Mes-Día o día/mes/año</div>
             </div>
             <div class="col-4 mb-3">
                 <label for="inputNaci" class="form-label">Fecha que empezo a trabajar: </label>
-                <input type="text" class="form-control" id="inputNaci" name="fechaInicio">
+                <input type="text" class="form-control" id="inputNaci" name="fechaInicio" required>
+                <div id="emailHelp" class="form-text">Formato: Año-Mes-Día o día/mes/año</div>
             </div>
         </div>
         <div class="row">
             <div class="col-4 mb-3">
                 <label for="inputDepend" class="form-label">Dependecia:</label>
-                <input type="text" class="form-control" id="inputDepend" name="dependencia">
+                <input type="text" class="form-control" id="inputDepend" name="dependencia" required>
             </div>
             <div class="col-4 mb-3">
                 <label for="inputFunc" class="form-label">Función que realiza:</label>
-                <input type="text" class="form-control" id="inputFunc" name="funcion">
+                <input type="text" class="form-control" id="inputFunc" name="funcion" required>
             </div>
             <div class="col-4 mb-3">
                 <label for="inputFunc" class="form-label">Salario Mensual</label>
-                <input type="text" class="form-control" id="inputFunc" name="salario">
+                <input type="number" class="form-control" id="inputFunc" name="salario" required min="0" pattern="^[0-9]+">
             </div>
         </div>
 
@@ -145,57 +149,64 @@
     </form>
     </div>
 
-    <?php try{ 
-        if (empty($_SESSION['personal'])) {
-            throw new Exception("Ingrese un registro para mostrar datos ");
-        }
+    <center>
+        <div class="container-md p-5">
+        <?php try{ 
+            if (empty($_SESSION['personal'])) {
+                throw new Exception("Ingrese un registro para mostrar datos ");
+            }
         ?>
-        <table>
-            <thead>
-                <tr>
-                    <th>Código: </th>
-                    <th>Nombre: </th>
-                    <th>Apellido: </th>
-                    <th>DUI: </th>
-                    <th>NIT: </th>
-                    <th>Telefono Movil: </th>
-                    <th>Telefono Fijo: </th>
-                    <th>Dirección: </th>
-                    <th>Correo Electrónico: </th>
-                    <th>Sexo: </th>
-                    <th>Fecha Nacimiento: </th>
-                    <th>Dependencia: </th>
-                    <th>Función Realiza: </th>
-                    <th>Salario </th>
-                    <th>Edad: </th>
-                    <th>Años Trabajados: </th>
-                    <th>¿Listo para jubilarse?: </th>
-                </tr>
-            </thead>
-            <tbody>
-            <?php foreach($_SESSION['personal'] as $personal): ?>
-                <tr>
-                    <td><?php echo $personal->codEmpleado;?></td>
-                    <td><?php echo $personal->nombre;?></td>
-                    <td><?php echo $personal->apellido;?></td>
-                    <td><?php echo $personal->dui;?></td>
-                    <td><?php echo $personal->nit;?></td>
-                    <td><?php echo $personal->telMovil;?></td>
-                    <td><?php echo $personal->telFijo;?></td>
-                    <td><?php echo $personal->direccion;?></td>
-                    <td><?php echo $personal->correo;?></td>
-                    <td><?php echo $personal->sexo;?></td>
-                    <td><?php echo $fechaNacimiento;?></td>
-                    <td><?php echo $personal->dependencia;?></td>
-                    <td><?php echo $personal->funcion;?></td>
-                    <td><?php echo $personal->salarioMensual;?></td>
-                    <td><?php echo $personal->edad;?></td>
-                    <td><?php echo $personal->añosTrabajados;?></td>
-                    <td><?php echo $personal->jubilar;?></td>
-                </tr>
-            <?php endforeach;?>
-            </tbody>
-        </table>
+        </div>
+    </center>
+
+        <div class="container-fluid p-5">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Código: </th>
+                        <th>Nombre: </th>
+                        <th>Apellido: </th>
+                        <th>DUI: </th>
+                        <th>NIT: </th>
+                        <th>Telefono Movil: </th>
+                        <th>Telefono Fijo: </th>
+                        <th>Dirección: </th>
+                        <th>Correo Electrónico: </th>
+                        <th>Sexo: </th>
+                        <th>Fecha Nacimiento: </th>
+                        <th>Dependencia: </th>
+                        <th>Función Realiza: </th>
+                        <th>Salario </th>
+                        <th>Edad: </th>
+                        <th>Años Trabajados: </th>
+                        <th>¿Listo para jubilarse?: </th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php foreach($_SESSION['personal'] as $personal): ?>
+                    <tr>
+                        <td><?php echo $personal->codEmpleado;?></td>
+                        <td><?php echo $personal->nombre;?></td>
+                        <td><?php echo $personal->apellido;?></td>
+                        <td><?php echo $personal->dui;?></td>
+                        <td><?php echo $personal->nit;?></td>
+                        <td><?php echo $personal->telMovil;?></td>
+                        <td><?php echo $personal->telFijo;?></td>
+                        <td><?php echo $personal->direccion;?></td>
+                        <td><?php echo $personal->correo;?></td>
+                        <td><?php echo $personal->sexo;?></td>
+                        <td><?php echo $fechaNacimiento;?></td>
+                        <td><?php echo $personal->dependencia;?></td>
+                        <td><?php echo $personal->funcion;?></td>
+                        <td><?php echo $personal->salarioMensual;?></td>
+                        <td><?php echo $personal->edad;?>Años</td>
+                        <td><?php echo $personal->añosTrabajados;?></td>
+                        <td><?php echo $personal->jubilar;?></td>
+                    </tr>
+                <?php endforeach;?>
+                </tbody>
+            </table>
+        </div>
     <?php 
     } catch (Exception $r){
         echo "Ingrese un registro para mostrar datos";

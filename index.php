@@ -18,6 +18,11 @@
         </a>
     </div>
     </nav>
+    <br></br>
+    <div class="container-md p-3"> 
+        <center><h2>Adilson Arian Montes Martinez - MM200149</h2></center>
+        <center><h2>Luis Pablo Velasco Flores - VF202313</h2></center>
+    </div>
 
     <div class="container-md p-5">
         <center><h2>Formulario de Registro</h2></center>
@@ -27,6 +32,7 @@
     <h3><center>Seleccione una opciona para ingresar datos:<center></h3>
     <center>
     <div class="d-grid gap-2 col-6 mx-auto">
+        <br>
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                 Elija una opción

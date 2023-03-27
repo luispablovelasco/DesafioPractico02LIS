@@ -70,140 +70,151 @@
 
     <div class="container-md p-3 border border-1 rounded-3 mb-5">
         <form method="POST">
-        <div class="row">
-            <div class="col-6 mb-3">
-                <label for="inputNombre" class="form-label">Nombre:</label>
-                <input type="text" class="form-control" id="inputName" name="nombre">
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <label for="inputNombre" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control" id="inputName" name="nombre" required>
+                </div>
+                <div class="col-6 mb-3">
+                    <label for="inputApellido" class="form-label">Apellido:</label>
+                    <input type="text" class="form-control" id="inputLastName" name="apellido" required>
+                </div>
             </div>
-            <div class="col-6 mb-3">
-                <label for="inputApellido" class="form-label">Apellido:</label>
-                <input type="text" class="form-control" id="inputLastName" name="apellido">
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-3 mb-3">
-                <label for="inputDui" class="form-label">DUI:</label>
-                <input type="number" class="form-control" id="inputDUI" name="dui">
+            <div class="row">
+                <div class="col-3 mb-3">
+                    <label for="inputDui" class="form-label">DUI:</label>
+                    <input type="text" class="form-control" id="inputDUI" name="dui" required maxlength="9" pattern="[0-9]{9}">
+                    <div id="emailHelp" class="form-text">Ingrese sin el guión</div>
+                </div>
+                <div class="col-3 mb-3">
+                    <label for="inputNit" class="form-label">Nit:</label>
+                    <input type="text" class="form-control" id="inputNit" name="nit" required maxlength="14" pattern="[0-9]{14}">
+                    <div id="emailHelp" class="form-text">Ingrese sin los guiones</div>
+                </div>
+                <div class="col-3 mb-3">
+                    <label for="inputTelMovil" class="form-label">Telefono Movil:</label>
+                    <input type="text" class="form-control" id="inputTelMovil" name="telMovil" maxlength="8" pattern="[0-9]{8}" required>
+                </div>
+                <div class="col-3 mb-3">
+                    <label for="inputTelFijo" class="form-label">Telefono Fijo:</label>
+                    <input type="text" class="form-control" id="inputTelFijo" name="telFijo" maxlength="8" pattern="[0-9]{8}" required>
+                </div>
             </div>
-            <div class="col-3 mb-3">
-                <label for="inputNit" class="form-label">Nit:</label>
-                <input type="number" class="form-control" id="inputNit" name="nit">
-            </div>
-            <div class="col-3 mb-3">
-                <label for="inputTelMovil" class="form-label">Telefono Movil:</label>
-                <input type="number" class="form-control" id="inputTelMovil" name="telMovil">
-            </div>
-            <div class="col-3 mb-3">
-            <label for="inputTelFijo" class="form-label">Telefono Fijo:</label>
-            <input type="number" class="form-control" id="inputTelFijo" name="telFijo">
-        </div>
-        </div>
 
-        <div class="mb-3">
-            <label for="inputDirec" class="form-label">Dirección:</label>
-            <input type="text" class="form-control" id="inputDirec" name="direccion">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Correo electrónico:</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="correo">
-            <div id="emailHelp" class="form-text">Debe ingresar un correo electrónico valido</div>
-        </div>
-        
-        <div class="row">
-            <div class="col-4 mb-3">
-                <label for="inputTelFijo" class="form-label">Sexo:</label>
-                <select class="form-select" aria-label="Default select example" name="sexo">
-                    <option value="Hombre">Hombre</option>
-                    <option value="Mujer">Mujer</option>
-                </select>
+            <div class="mb-3">
+                <label for="inputDirec" class="form-label">Dirección:</label>
+                <input type="text" class="form-control" id="inputDirec" name="direccion" required>
             </div>
-            <div class="col-4 mb-3">
-                <label for="inputNaci" class="form-label">Fecha de Nacimiento:</label>
-                <input type="text" class="form-control" id="inputNaci" name="fechaNacimiento">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Correo electrónico:</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="correo" required>
+                <div id="emailHelp" class="form-text">Debe ingresar un correo electrónico valido</div>
             </div>
-        </div>
-        <div class="row">
-            <label for="inputAsig1" class="form-label">Asignaturas:</label>
-            <div class="col-4 mb-3">
-                <input type="text" class="form-control" id="inputAsig1" name="materia1">
+            
+            <div class="row">
+                <div class="col-4 mb-3">
+                    <label for="inputTelFijo" class="form-label">Sexo:</label>
+                    <select class="form-select" aria-label="Default select example" name="sexo">
+                        <option value="Hombre">Hombre</option>
+                        <option value="Mujer">Mujer</option>
+                    </select>
+                </div>
+                <div class="col-4 mb-3">
+                    <label for="inputNaci" class="form-label">Fecha de Nacimiento:</label>
+                    <input type="text" class="form-control" id="inputNaci" name="fechaNacimiento" required>
+                    <div id="emailHelp" class="form-text">Formato: Año-Mes-Día o día/mes/año</div>
+                </div>
             </div>
-            <div class="col-4 mb-3">
-                <input type="text" class="form-control" id="inputAsig2" name="materia2">
+            <div class="row">
+                <label for="inputAsig1" class="form-label">Asignaturas:</label>
+                <div class="col-4 mb-3">
+                    <input type="text" class="form-control" id="inputAsig1" name="materia1" required>
+                </div>
+                <div class="col-4 mb-3">
+                    <input type="text" class="form-control" id="inputAsig2" name="materia2" required>
+                </div>
+                <div class="col-4 mb-3">
+                    <input type="text" class="form-control" id="inputAsig3" name="materia3" required>
+                </div>
             </div>
-            <div class="col-4 mb-3">
-                <input type="text" class="form-control" id="inputAsig3" name="materia3">
+            <div class="row">
+                <div class="col-2 mb-3">
+                    <label for="inputHorasTrabajadas" class="form-label">Horas trabajadas:</label>
+                    <input type="number" class="form-control" id="inputEdad" name="horasTrabajadas" required min="0" pattern="^[0-9]+">
+                </div>
+                <div class="col-2 mb-3">
+                    <label for="inputHorasTrabajadas" class="form-label">Pago por horas Trabajadas:</label>
+                    <input type="number" class="form-control" id="inputEdad" name="pagoHoras" required min="0" pattern="^[0-9]+">
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-2 mb-3">
-                <label for="inputHorasTrabajadas" class="form-label">Horas trabajadas:</label>
-                <input type="number" class="form-control" id="inputEdad" name="horasTrabajadas">
-            </div>
-                <label for="inputHorasTrabajadas" class="form-label">Pago por horas Trabajadas:</label>
-                <input type="number" class="form-control" id="inputEdad" name="pagoHoras">
-            </div>
-        </div>
 
         <button type="submit" class="btn btn-primary" name="registrar">Registrar</button>
         </form>
     </div>
 
-    <?php try{ 
-        if (empty($_SESSION['docentes'])) {
-            throw new Exception("Ingrese un registro para mostrar datos ");
-        }
+    <center>
+        <div class="container-md p-5">
+        <?php try{ 
+            if (empty($_SESSION['docentes'])) {
+                throw new Exception("Ingrese un registro para mostrar datos ");
+            }
         ?>
-        <table>
-            <thead>
-                <tr>
-                    <th>Código: </th>
-                    <th>Nombre: </th>
-                    <th>Apellido: </th>
-                    <th>DUI: </th>
-                    <th>NIT: </th>
-                    <th>Dirección: </th>
-                    <th>Correo Electrónico: </th>
-                    <th>Telefono Movil: </th>
-                    <th>Telefono Fijo: </th>
-                    <th>Sexo: </th>
-                    <th>Fecha Nacimiento: </th>
-                    <th>Edad: </th>
-                    <th>Materia 1: </th>
-                    <th>Materia 2: </th>
-                    <th>Materia 3: </th>
-                    <th>¿Es Mayor Edad?</th>
-                    <th>Horas Trabajadas: </th>
-                    <th>Pago por horas trabajadas: </th>
-                    <th>Salario </th>
-                </tr>
-            </thead>
-            <tbody>
-            <?php foreach($_SESSION['docentes'] as $docentes): ?>
-                <tr>
-                    <td><?php echo $docentes->codDocente;?></td>
-                    <td><?php echo $docentes->nombre;?></td>
-                    <td><?php echo $docentes->apellido;?></td>
-                    <td><?php echo $docentes->dui;?></td>
-                    <td><?php echo $docentes->nit;?></td>
-                    <td><?php echo $docentes->direccion;?></td>
-                    <td><?php echo $docentes->correo;?></td>
-                    <td><?php echo $docentes->telMovil;?></td>
-                    <td><?php echo $docentes->telFijo;?></td>
-                    <td><?php echo $docentes->sexo;?></td>
-                    <td><?php echo $fechaNacimiento;?></td>
-                    <td><?php echo $docentes->edad;?></td>
-                    <td><?php echo $docentes->materia1;?></td>
-                    <td><?php echo $docentes->materia2;?></td>
-                    <td><?php echo $docentes->materia3;?></td>
-                    <td><?php echo $docentes->esMayorEdad;?></td>
-                    <td><?php echo $docentes->horasTrabajadas;?></td>
-                    <td><?php echo $docentes->pagoHoraTrabajada;?></td>
-                    <td><?php echo $docentes->salario;?></td>
-                </tr>
-            <?php endforeach;?>
-            </tbody>
-        </table>
+        </div>
+    </center>
+
+        <div class="container-fluid p-5">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Código: </th>
+                        <th>Nombre: </th>
+                        <th>Apellido: </th>
+                        <th>DUI: </th>
+                        <th>NIT: </th>
+                        <th>Dirección: </th>
+                        <th>Correo Electrónico: </th>
+                        <th>Telefono Movil: </th>
+                        <th>Telefono Fijo: </th>
+                        <th>Sexo: </th>
+                        <th>Fecha Nacimiento: </th>
+                        <th>Edad: </th>
+                        <th>Materia 1: </th>
+                        <th>Materia 2: </th>
+                        <th>Materia 3: </th>
+                        <th>¿Es Mayor Edad?</th>
+                        <th>Horas Trabajadas: </th>
+                        <th>Pago por horas trabajadas: </th>
+                        <th>Salario </th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php foreach($_SESSION['docentes'] as $docentes): ?>
+                    <tr>
+                        <td><?php echo $docentes->codDocente;?></td>
+                        <td><?php echo $docentes->nombre;?></td>
+                        <td><?php echo $docentes->apellido;?></td>
+                        <td><?php echo $docentes->dui;?></td>
+                        <td><?php echo $docentes->nit;?></td>
+                        <td><?php echo $docentes->direccion;?></td>
+                        <td><?php echo $docentes->correo;?></td>
+                        <td><?php echo $docentes->telMovil;?></td>
+                        <td><?php echo $docentes->telFijo;?></td>
+                        <td><?php echo $docentes->sexo;?></td>
+                        <td><?php echo $fechaNacimiento;?></td>
+                        <td><?php echo $docentes->edad;?></td>
+                        <td><?php echo $docentes->materia1;?></td>
+                        <td><?php echo $docentes->materia2;?></td>
+                        <td><?php echo $docentes->materia3;?></td>
+                        <td><?php echo $docentes->esMayorEdad;?></td>
+                        <td><?php echo $docentes->horasTrabajadas;?></td>
+                        <td><?php echo $docentes->pagoHoraTrabajada;?></td>
+                        <td><?php echo $docentes->salario;?></td>
+                    </tr>
+                <?php endforeach;?>
+                </tbody>
+            </table>
+        </div>
     <?php 
     } catch (Exception $r){
         echo "Ingrese un registro para mostrar datos";

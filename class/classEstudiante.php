@@ -38,7 +38,7 @@ class Estudiante extends Persona {
     }
 
     public function calcularPromedio() {
-        $this->notaPromedio = ($this->nota1 + $this->nota2 + $this->nota3) / 3;
+        $this->notaPromedio = round(($this->nota1 + $this->nota2 + $this->nota3) / 3,2);
     }
 
 
